@@ -1,0 +1,44 @@
+format = """
+$username@$hostname\
+$line_break\
+	$sudo  $character"""
+continuation_prompt = "[  󱞩 ](bright-green)"
+
+
+# Don't print a new line at the start of the prompt
+add_newline = true
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# stuff for directory
+[directory]
+truncation_length = 4
+truncation_symbol = '…/'
+truncate_to_repo = false
+style = "cyan"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[character]
+success_symbol = "[λ](green)"
+error_symbol = "[λ](bold red)"
+
+[username]
+style_user = 'cyan bold'
+style_root = 'red bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+aliases = { "root" = "super user" } 
+
+[hostname]
+ssh_only = false
+format = '[$hostname](bold cyan)'
+disabled = false
+
+[sudo]
+style = 'bold green'
+format = '[$symbol]($style)'
+symbol = ''
+disabled = false

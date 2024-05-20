@@ -1,0 +1,94 @@
+@keyframes colorshift{
+	0%	{background-image: linear-gradient(to bottom right, #88ffff, #ff5555);}
+	25%	{background-image: linear-gradient(to bottom right, #ff5555, #88ffff, #88ffff, #ff5555);}
+	50%	{background-image: linear-gradient(to bottom right, #ff5555, #88ffff);}
+	75%	{background-image: linear-gradient(to bottom right, #88ffff, #ff5555, #ff5555, #88ffff);}
+	100%	{background-image: linear-gradient(to bottom right, #88ffff, #ff5555);}
+}
+@keyframes lowbat{
+	0%	{background-image: inherit;}
+	20%	{background-image: linear-gradient(to bottom, #20ffc0, #ff5555, #ff5555, #ff5555);}
+	40%	{background-image: linear-gradient(to bottom, #ff5555, #20ffc0, #ff5555, #ff5555);}
+	60%	{background-image: linear-gradient(to bottom, #ff5555, #ff5555, #20ffc0, #ff5555);}
+	80%	{background-image: linear-gradient(to bottom, #ff5555, #ff5555, #ff5555, #20ffc0);}
+	100%	{background-image: inherit;}
+}
+
+* {
+	color: #404040;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	transition-duration: 0.5s;
+}
+*:hover {
+	color: #222222;
+	box-shadow: inset 0 -3px #AA4444;
+	text-shadow: none;
+}
+
+window#waybar {
+	background-image: linear-gradient(to bottom right, #88ffff, #ff5555);
+	border-radius: 8px;
+	transition-duration: 1s;
+}
+window#waybar.empty {
+	opacity: 0;
+	animation: colorshift 8s linear infinite;
+
+	border-radius: 8px;
+	border-left: 0px solid transparent;
+
+	transition-duration: 1s;
+}
+
+window#waybar.empty .modules-left {
+	margin-left: 320px;
+}
+window#waybar.empty .modules-right {
+	margin-right: 320px;
+}
+.modules-left {
+	margin-left: 16px;
+}
+.modules-right {
+	margin-right: 16px;
+}
+
+#workspaces button {
+	box-shadow: inset 0 -3px transparent;
+	border: none;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-radius: 0;
+}
+#workspaces button.active {
+	box-shadow: inset 0 -3px #44aaaa;
+}
+#workspaces button:hover {
+	box-shadow: inset 0 -3px #AA4444;
+	text-shadow: none;
+}
+#workspaces {
+	box-shadow: inset 0 0px #AA4444;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#battery {
+}
+#battery.plugged, #battery.charging {
+	box-shadow: inset 0 -3px #44aaaa;
+	border-color: #20ffc0;	
+}
+#battery.critical:not(.charging) {
+	background: #ff4444;
+	animation: lowbat 1s linear infinite;
+}
+
+#window {
+	box-shadow: inset 0 0px #000000;
+}
+#window:hover {
+	box-shadow: inset 0 0px #000000;
+}
