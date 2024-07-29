@@ -1,0 +1,107 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "disableLineWrap": false,
+    "separator": "  "
+  },
+  // character pallet:
+  // ├ ┤┌ ─ ┐└ ┘
+  "modules": [
+    {
+    	"type": "title",
+	"format": "             {6}{7}{8}"
+    },
+    {
+    	"type": "custom",
+	"format": "┌──────────────── {#1}OS stuff{#} ─────────────────┐"
+    },
+    {
+    	"type": "os",
+	"format": "{3}",
+	"key": " OS"
+    },
+    {
+	    "type": "host",
+	    "key": " Host"
+    },
+    {
+	    "type": "kernel",
+	    "key": " Kernel"
+    },
+    {
+	    "type": "uptime",
+	    "key": " Uptime"
+    },
+    {
+	    "type": "packages",
+	    "key": " Packages"
+    },
+    {
+	    "type": "shell",
+	    "key": " Shell"
+    },
+    {
+    	"type": "custom",
+	"format": "├────────────── {#1}Hardware shit{#} ──────────────┤"
+    },
+    {
+    	"type": "display",
+	"format": "{1}x{2} @ {3}Hz",
+	"key": " Display"
+    },
+    {
+	    "type": "cpu",
+	    "key": " CPU",
+	    "format": "{1}"
+    },
+    {
+	    "type": "gpu",
+	    "key": " GPU",
+	    "format": "{2}"
+    },
+    {
+	    "type": "memory",
+	    "key": " Memory"
+    },
+    {
+	    "type": "swap",
+	    "key": " Swap"
+    },
+    {
+	    "type": "disk",
+	    "key": " Disk"
+    },
+    {
+	    "type": "battery",
+	    "key": " Battery"
+    },
+    {
+    	"type": "custom",
+	"format": "├────────────── {#1} Other Stuff {#} ───────────────┤"
+    },
+    {
+	    "type": "de",
+	    "key": " DE"
+    },
+    {
+	    "type": "wm",
+	    "key": " WM"
+    },
+    {
+	    "type": "terminal",
+	    "key": " Terminal"
+    }, 
+    {
+	    "type": "locale",
+	    "key": " Locale"
+    },
+    {
+    	"type": "custom",
+	"format": "└────────────────────────────────────────────┘\n"
+    },
+
+    {
+	    "type": "colors"
+    }
+  ]
+}

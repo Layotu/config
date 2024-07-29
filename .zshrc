@@ -15,7 +15,7 @@
 # =======================
 source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 unsetopt beep
-bindkey -v
+#bindkey -e
 
 
 # =======================
@@ -27,16 +27,18 @@ export BROWSER="chromium"
 # =======================
 # 	aliases
 # =======================
+alias vencord='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 alias brightness='sudo light -S'
 alias hibernate='systemctl hibernate'
 alias cmatrix='cmatrix -C cyan'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias fetch='fastfetch'
 
 # =======================
 #    run some commands
 # =======================
-neowofetch
+fastfetch
 task
 
 # =======================

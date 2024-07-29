@@ -1,7 +1,16 @@
 format = """
-$username@$hostname\
-$line_break\
-	$sudo  $character"""
+ [](fg:#55ccfc inverted)\
+$username[@](bg:#55ccfc fg:blue bold)$hostname\
+[](bg:#f7a8d8 fg:#55ccfc)\
+$cmd_duration\
+[](bg:#ffffff fg:#f7a8d8)\
+$sudo\
+[](bg:#f7a8d8 fg:#ffffff)\
+$directory\
+[](bg:#55ccfc fg:#f7a8d8)\
+
+$character
+"""
 continuation_prompt = "[  󱞩 ](bright-green)"
 
 
@@ -17,16 +26,17 @@ disabled = true
 truncation_length = 4
 truncation_symbol = '…/'
 truncate_to_repo = false
-style = "cyan"
-format = "[$path]($style)[$read_only]($read_only_style) "
+style = "blue bold bg:#f7a8d8"
+read_only_style = "red bold bg:#f7a8d8"
+format = "[ $path]($style)[ $read_only]($read_only_style)"
 
 [character]
-success_symbol = "[λ](green)"
-error_symbol = "[λ](bold red)"
+success_symbol = "[](fg:#55ccfc)"
+error_symbol = "[](fg:#55ccfc)"
 
 [username]
-style_user = 'cyan bold'
-style_root = 'red bold'
+style_user = 'bg:#55ccfc fg:blue bold'
+style_root = 'bg:#55ccfc fg:blue bold'
 format = '[$user]($style)'
 disabled = false
 show_always = true
@@ -34,11 +44,15 @@ aliases = { "root" = "super user" }
 
 [hostname]
 ssh_only = false
-format = '[$hostname](bold cyan)'
+format = '[$hostname](bold fg:blue bg:#55ccfc)'
 disabled = false
 
 [sudo]
-style = 'bold green'
-format = '[$symbol]($style)'
-symbol = ''
+style = 'bold blue bg:#ffffff'
+format = '[ $symbol ]($style)'
+symbol = '󰴅'
 disabled = false
+
+[cmd_duration]
+min_time = 1000
+format = '[ took $duration](italic blue bg:#f7a8d8)'
