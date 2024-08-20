@@ -1,58 +1,69 @@
+# color pallet
+# (0585fe>169ffa>0fb3ff
 format = """
- [](fg:#55ccfc inverted)\
-$username[@](bg:#55ccfc fg:blue bold)$hostname\
-[](bg:#f7a8d8 fg:#55ccfc)\
-$cmd_duration\
-[](bg:#ffffff fg:#f7a8d8)\
-$sudo\
-[](bg:#f7a8d8 fg:#ffffff)\
+ [](fg:#0585fe)\
+$username[@](bg:#0585fe fg:blue)$hostname\
+[](fg:#0585fe bg:#169ffa)\
 $directory\
-[](bg:#55ccfc fg:#f7a8d8)\
+[](fg:#169ffa bg:#0fb9ff)\
+$sudo\
+[](fg:#0fb9ff bg:#0fd0fc)\
 
+[](fg:#0fd0fc bg:#0ceeff)\
 $character
 """
-continuation_prompt = "[  󱞩 ](bright-green)"
+
+continuation_prompt = "[  󱞪 ](bright-green)"
 
 
 # Don't print a new line at the start of the prompt
 add_newline = true
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
-# stuff for directory
-[directory]
-truncation_length = 4
-truncation_symbol = '…/'
-truncate_to_repo = false
-style = "blue bold bg:#f7a8d8"
-read_only_style = "red bold bg:#f7a8d8"
-format = "[ $path]($style)[ $read_only]($read_only_style)"
-
-[character]
-success_symbol = "[](fg:#55ccfc)"
-error_symbol = "[](fg:#55ccfc)"
 
 [username]
-style_user = 'bg:#55ccfc fg:blue bold'
-style_root = 'bg:#55ccfc fg:blue bold'
+style_user = 'bg:#0585fe fg:blue bold'
+style_root = 'bg:#0585fe fg:blue bold'
 format = '[$user]($style)'
 disabled = false
 show_always = true
 aliases = { "root" = "super user" } 
 
+
 [hostname]
 ssh_only = false
-format = '[$hostname](bold fg:blue bg:#55ccfc)'
+format = '[$hostname](bold fg:blue bg:#0585fe)'
 disabled = false
 
+
+[directory]
+truncation_length = 4
+truncation_symbol = '…/'
+truncate_to_repo = false
+style = "blue bold bg:#169ffa"
+read_only_style = "red bold bg:#169ffa"
+format = "[ $path]($style)[ $read_only]($read_only_style)"
+
+
+[character]
+success_symbol = "[](fg:#0ceeff)"
+error_symbol = "[](fg:#0ceeff)"
+
+
 [sudo]
-style = 'bold blue bg:#ffffff'
+style = 'bold blue bg:#0fb9ff'
 format = '[ $symbol ]($style)'
-symbol = '󰴅'
+symbol = '󱕵'
 disabled = false
+
+
 
 [cmd_duration]
 min_time = 1000
 format = '[ took $duration](italic blue bg:#f7a8d8)'
+
+[shell]
+bash_indicator = "󱆃"
+fish_indicator = "󰈺"
+zsh_indicator = "%_"
+format = "[$indicator ]($style)"
+style = "bg:#0ceeff fg:blue bold"
